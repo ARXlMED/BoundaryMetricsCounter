@@ -50,13 +50,18 @@ fn process(values: &[i32]) -> i32 {
 }
 fn main() {
     let values = vec![0, 1, 2, 5, 10, 15];
+
     let score = calculate_score(&values);
     let result = process(&values);
+
     println!("Score: {}", score);
     println!("Result: {}", result);
+
     let mut index = 0usize;
+
     while index < values.len() {
         let value = &values[index];
+
         if *value >= 0 {
             if *value > 10 {
                 println!("{} -> large", value);
@@ -66,6 +71,8 @@ fn main() {
         } else {
             println!("{} -> negative", value);
         }
+
         index += 1;
     }
+    println!("Score calculated: {}", score);
 }
